@@ -1,7 +1,7 @@
 
-# react-native-mbaichuan
+# rn-alibc-fix
 
-[![npm version](https://badge.fury.io/js/react-native-mbaichuan.svg)](https://badge.fury.io/js/react-native-mbaichuan)
+
 
 ## 注意点
 
@@ -12,7 +12,7 @@
 
 ## 开始
 
-`$ npm install react-native-mbaichuan --save`
+`$ npm install rn-alibc-fix--save`
 
 ### iOS
 
@@ -58,4 +58,44 @@ allprojects {
 
 ## 使用方法
 详见examples目录
+
+
+## 常见的问题
+
+android 
+
+{"code": "1", "message": "安全初始化失败"}
+
+a.debug环境 请在百川获取安全图片时,使用app-debug.apk。
+b.生产环境 请在使用app-release.apk获取。
+
+如何还是报错 请将gradle 的版本 换成3.5.0以下(不含3.5.0) 我的是3.4.2 可以成功。
+
+ios 初始化成功 授权不成功
+
+请在appdelete.m文件添加下面代码
+
+```
+#import <AlibcTradeSDK/AlibcTradeSDK.h>
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  if(![[AlibcTradeSDK sharedInstance]application:application openURL:url sourceApplication:sourceApplication annotation:annotation])
+  {
+    
+  }
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+  if(@available(iOS 9.0,*)){
+    __unused BOOL isHandleByALBBSDK = [[AlibcTradeSDK sharedInstance] application:app openURL:url options:options];
+  }else{
+    
+  }
+  return YES;
+}
+
+```
 

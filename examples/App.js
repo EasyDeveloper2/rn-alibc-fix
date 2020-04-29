@@ -5,7 +5,7 @@ import {
     View,
     Text,
 } from 'react-native';
-import * as mBaichuan from 'react-native-mbaichuan';
+import * as alibc from 'rn-alibc-fix';
 import CommonCss from './CommonCss';
 import ListItem from './ListItem';
 
@@ -38,25 +38,25 @@ class App extends Component {
                         <ListItem
                             title={'initSDK'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.initSDK()));
+                                alert(JSON.stringify(await alibc.initSDK()));
                             }}
                         />
                         <ListItem
                             title={'showLogin'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.showLogin()));
+                                alert(JSON.stringify(await alibc.showLogin()));
                             }}
                         />
                         <ListItem
                             title={'getUserInfo'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.getUserInfo()));
+                                alert(JSON.stringify(await alibc.getUserInfo()));
                             }}
                         />
                         <ListItem
                             title={'logout'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.logout()));
+                                alert(JSON.stringify(await alibc.logout()));
                             }}
                         />
                     </View>
@@ -65,7 +65,7 @@ class App extends Component {
                         <ListItem
                             title={'detail'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.show({
+                                alert(JSON.stringify(await alibc.show({
                                     type: 'detail',
                                     payload: Object.assign({}, param, {
                                         itemid: '600098537943'
@@ -76,7 +76,7 @@ class App extends Component {
                         <ListItem
                             title={'url'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.show({
+                                alert(JSON.stringify(await alibc.show({
                                     type: 'url',
                                     payload: Object.assign({}, param, {
                                         url: 'https://detail.tmall.com/item.htm?id=600098537943'
@@ -87,7 +87,7 @@ class App extends Component {
                         <ListItem
                             title={'url授权'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.show({
+                                alert(JSON.stringify(await alibc.show({
                                     type: 'url',
                                     payload: Object.assign({}, param, {
                                         url: 'https://oauth.taobao.com/authorize?response_type=code&client_id=25334456&redirect_uri=&view=wap',
@@ -99,7 +99,7 @@ class App extends Component {
                         <ListItem
                             title={'shop'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.show({
+                                alert(JSON.stringify(await alibc.show({
                                     type: 'shop',
                                     payload: Object.assign({}, param, {
                                         shopid: '471927947'
@@ -110,7 +110,7 @@ class App extends Component {
                         <ListItem
                             title={'addCard【废除】'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.show({
+                                alert(JSON.stringify(await alibc.show({
                                     type: 'addCard',
                                     payload: Object.assign({}, param, {
                                         itemid: '579980429376'
@@ -121,7 +121,7 @@ class App extends Component {
                         <ListItem
                             title={'orders【废除】'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.show({
+                                alert(JSON.stringify(await alibc.show({
                                     type: 'orders',
                                     payload: Object.assign({}, param, {
                                         orderStatus: '0',
@@ -133,7 +133,7 @@ class App extends Component {
                         <ListItem
                             title={'mycard'}
                             action={async () => {
-                                alert(JSON.stringify(await mBaichuan.show({
+                                alert(JSON.stringify(await alibc.show({
                                     type: 'mycard',
                                     payload: param
                                 })));
@@ -153,7 +153,7 @@ class App extends Component {
                         />
                         {this.state.showWeb ? (
                             <React.Fragment>
-                                <mBaichuan.BCWebView
+                                <alibc.BCWebView
                                     style={{
                                         flex: 1,
                                         height: 300
