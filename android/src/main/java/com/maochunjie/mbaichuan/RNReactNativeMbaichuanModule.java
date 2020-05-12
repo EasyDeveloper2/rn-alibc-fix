@@ -104,7 +104,7 @@ public class RNReactNativeMbaichuanModule extends ReactContextBaseJavaModule {
             map.putString("openId", localSession.openId);
             map.putString("avatarUrl", localSession.avatarUrl);
             map.putString("userNick", localSession.nick);
-            map.putString('topAuthCode',localSession.topAuthCode);
+            map.putString("topAuthCode",localSession.topAuthCode);
             map.putString("topAccessToken",localSession.topAccessToken);
             map.putString("havanaSsoToken",localSession.havanaSsoToken);
             map.putString("ssoToken",localSession.ssoToken);

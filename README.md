@@ -12,7 +12,7 @@
 
 ## 开始
 
-`$ npm install rn-alibc-fix--save`
+`$ npm install rn-alibc-fix --save`
 
 ### iOS
 
@@ -99,3 +99,9 @@ ios 初始化成功 授权不成功
 
 ```
 
+
+授权接口可以获取的数据格式如下
+
+```
+{"avatarUrl": "https://wwc.alicdn.com/avatar/getAvatar.do?userIdStrV2=Xh5b6Lu2dBn*BASSssSPnQTT&type=taobao", "havanaSsoToken": null, "isLogin": "true", "openId": "AAFs0YFnAJ3NLZwkkBddbclE", "ssoToken": null, "topAccessToken": "6300b135a2d7b92e6fa6097ae6a984fda63d7cdbff9c8fd2208009568447", "topAuthCode": "lWhgHHUn9D9BU5E3Oyk7fRwT12189074", "userNick": "tb070067142", "userid": "2208009568447"}
+```

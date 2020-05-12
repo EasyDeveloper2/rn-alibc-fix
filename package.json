@@ -1,7 +1,7 @@
 
 {
   "name": "rn-alibc-fix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react-native library for Ali Baichuan",
   "main": "index.js",
   "scripts": {
